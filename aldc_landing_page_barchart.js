@@ -33,7 +33,7 @@ function aldcCreateBarChart(params = {
 
   // insert html into #aldcBarChart container
   const html_code =
-      '<canvas id="myChart"></canvas>';
+      '<canvas id="myChart" height="120"></canvas>';
   document.getElementById('aldcBarChart').innerHTML = html_code;
 
 
@@ -45,7 +45,15 @@ function aldcCreateBarChart(params = {
     options: {
       barValueSpacing: 20,
       scales: {
+        x: {
+          grid: {
+            display: false,
+          },
+        },
         y: {
+          grid: {
+            display: false,
+          },
           max: 35000,
           ticks: {
             callback: function(val, index) {
