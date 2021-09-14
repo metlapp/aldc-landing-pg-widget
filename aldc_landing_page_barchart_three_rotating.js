@@ -40,7 +40,7 @@ function aldcCreateBarChart(params = {}) {
   graph_data = [
     {
       data: [2, 8],
-      label: "Time to Implement (Months)",
+      label: "Time to Implement",
       x_ticks: (val) => {
         return val;
       },
@@ -54,7 +54,7 @@ function aldcCreateBarChart(params = {}) {
     },
     {
       data: [10, 4],
-      label: "Available Time for Innovation (Months)",
+      label: "Available Time for Innovation",
       x_ticks: (val) => {
         return val;
       },
@@ -99,6 +99,7 @@ function aldcCreateBarChart(params = {}) {
           },
           ticks: {
             callback: graph_data[0].x_ticks,
+            display: false,
           },
         },
         y: {
