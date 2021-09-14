@@ -8,12 +8,12 @@ var delayed = undefined;
 let dataset_diy = {
   label: "DIY",
   backgroundColor: COLOR_DIY_BAR,
-  data: [14308, 9486, 9486, 14034, 14034, 24814, 10780, 31244 ]
+  data: [14308, 9486, 9486, 14034, 14034, 24814, 10780, 10780],
 };
 let dataset_eclipse = {
   label: "Eclipse",
   backgroundColor: COLOR_ECLIPSE_BAR,
-  data: [7500, 7500, 7500, 7500, 7500, 7500, 7500, 7500],
+  data: [7500, 7500, 0, 0, 0, 0, 0, 0],
 }
 let data = {
   labels: ["Month 1", "Month 2", "Month 3", "Month 4", "Month 5", "Month 6", "Month 7", "Month 8"],

@@ -41,6 +41,7 @@ function aldcCreateBarChart(params = {}) {
     {
       data: [2, 8],
       label: "Time to Implement",
+      colors: [param_color_eclipse, param_color_diy, ],
       x_ticks: (val) => {
         return val;
       },
@@ -48,13 +49,15 @@ function aldcCreateBarChart(params = {}) {
     {
       data: [90000, 133800],
       label: "Maintenance Costs",
+      colors: [param_color_eclipse, param_color_diy, ],
       x_ticks: (val) => {
         return '$' + val/1000 + 'K';
       },
     },
     {
       data: [10, 4],
-      label: "Available Time for Innovation",
+      label: "Innovation Time",
+      colors: ["#00b33c", "#e60000", ],
       x_ticks: (val) => {
         return val;
       },
@@ -119,7 +122,10 @@ function aldcCreateBarChart(params = {}) {
         title: {
           display: true,
           text: graph_data[0].label,
-          position: "bottom",
+          position: "top",
+          font: {
+            size: 18,
+          },
         },
         legend: {
           display: false,
@@ -156,6 +162,8 @@ function aldcCreateBarChart(params = {}) {
     const graph_data_arr = graph_data[graph_sequence].data;
     const graph_label = graph_data[graph_sequence].label;
     const graph_x_ticks = graph_data[graph_sequence].x_ticks;
+    const graph_colors = graph_data[graph_sequence].colors;
+
 
 
     // set new dataset and options
@@ -163,6 +171,7 @@ function aldcCreateBarChart(params = {}) {
     combinedBarChart.data.datasets[0].data = graph_data_arr;
     combinedBarChart.options.plugins.title.text = graph_label;
     combinedBarChart.options.scales.x.ticks.callback = graph_x_ticks;
+    combinedBarChart.data.datasets[0].backgroundColor = graph_colors;
 
     // reload graph
     combinedBarChart.reset();
