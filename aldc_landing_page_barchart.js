@@ -34,7 +34,7 @@ function aldcCreateBarChart(params = {
   // insert html into #aldcBarChart container
   const html_code =
       '<canvas id="myChart"></canvas>';
-  document.getElementById('aldcBarChart').innerHTML = html_code;
+  document.getElementById('aldcBarChart').insertAdjacentHTML("afterbegin", html_code);
 
 
   // create chart
@@ -43,7 +43,7 @@ function aldcCreateBarChart(params = {
     type: 'bar',
     data: data,
     options: {
-      maintainAspectRatio: false,
+      maintainAspectRatio: false,  // this makes the graph stretch to the size of the parent container
       barValueSpacing: 20,
       scales: {
         x: {
@@ -68,7 +68,7 @@ function aldcCreateBarChart(params = {
       },
       plugins: {
         legend: {
-          display: false,
+          display: true,
         },
         tooltip: {
           callbacks: {
@@ -92,6 +92,7 @@ function aldcCreateBarChart(params = {
           }
           return delay;
         },
+        loop: true,
       },
     },
   });
